@@ -157,7 +157,7 @@ function startContinuousBarrage() {
         barrage.appendChild(text);
         setTimeout(() => text.remove(), 4000); // 4秒移除，与横屏速度匹配
         positionIndex = (positionIndex + 1) % topPositions.length;
-        setTimeout(showContinuousMessage, 4000); // 4秒间隔
+        setTimeout(showContinuousMessage, 1000); // 4秒间隔
     }
     showContinuousMessage();
 }
@@ -246,11 +246,11 @@ function displayUserBarrages() {
             text.style.top = `${randomPosition}%`;
             text.style.color = `hsl(${Math.random() * 360}, 70%, 50%)`;
             barrage.appendChild(text);
-            setTimeout(() => text.remove(), 4000); // 4秒移除
+            setTimeout(() => text.remove(), 6000); // 4秒移除
             showDefaultAfterWishes = false; // 重置标记
             // 重新加载愿望内容以继续循环
             userBarrages = storedWish.split(',').map(w => w.trim()).filter(w => w);
-            setTimeout(displayUserBarrages, 4000); // 4秒后继续
+            setTimeout(displayUserBarrages, 6000); // 4秒后继续
             return;
         } else if (!storedWish) {
             // 如果没有存储的愿望，显示默认弹幕并循环
@@ -283,7 +283,7 @@ function displayUserBarrages() {
         showDefaultAfterWishes = true;
     }
 
-    setTimeout(displayUserBarrages, 4000); // 4秒后继续
+    setTimeout(displayUserBarrages, 1000); // 4秒后继续
 }
 
 function goToGreeting() {
