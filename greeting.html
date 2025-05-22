@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>最遗憾的是不能到最后</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container greeting-page">
+        <div class="dynamic-bg"></div>
+        <div class="card-container">
+            <!-- 第一张卡片：动态填充用户愿望 -->
+            <div class="card" onclick="openCard(this)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h2>🎁 点击打开祝福卡片！</h2>
+                    </div>
+                    <div class="card-back">
+                        <h2 id="greetingTitle">生日快乐！</h2>
+                        <p id="greetingMessage">愿你生日充满欢乐，未来一年幸福美满，梦想成真！</p>
+                    </div>
+                </div>
+            </div>
+            <!-- 第二张卡片 -->
+            <div class="card" onclick="openCard(this)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h2>🎁 点击打开祝福卡片！</h2>
+                    </div>
+                    <div class="card-back">
+                        <h2>愿你永远天真单纯！</h2>
+                        <p>保持一颗纯真的心，愿你永远快乐无忧！</p>
+                    </div>
+                </div>
+            </div>
+            <!-- 第三张卡片 -->
+            <div class="card" onclick="openCard(this)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h2>🎁 点击打开祝福卡片！</h2>
+                    </div>
+                    <div class="card-back">
+                        <h2>愿你今年快乐无忧！</h2>
+                        <p>愿你的每一天都充满欢笑！</p>
+                    </div>
+                </div>
+            </div>
+            <!-- 第四张卡片 -->
+            <div class="card" onclick="openCard(this)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h2>🎁 点击打开祝福卡片！</h2>
+                    </div>
+                    <div class="card-back">
+                        <h2>愿你今年顺顺利利</h2>
+                        <p>愿你的事业和生活一切顺利！</p>
+                    </div>
+                </div>
+            </div>
+            <!-- 第五张卡片 -->
+            <div class="card" onclick="openCard(this)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h2>🎁 点击打开祝福卡片！</h2>
+                    </div>
+                    <div class="card-back">
+                        <h2>愿你今年勇往直前</h2>
+                        <p>勇敢追逐梦想，未来可期！</p>
+                    </div>
+                </div>
+            </div>
+            <!-- 第六张卡片 -->
+            <div class="card" onclick="openCard(this)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h2>🎁 点击打开祝福卡片！</h2>
+                    </div>
+                    <div class="card-back">
+                        <h2>愿你做上自己喜欢的事情</h2>
+                        <p>找到热爱，活出精彩！</p>
+                    </div>
+                </div>
+            </div>
+            <!-- 第七张卡片 -->
+            <div class="card" onclick="openCard(this)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h2>🎁 点击打开祝福卡片！</h2>
+                    </div>
+                    <div class="card-back">
+                        <h2>愿你今年吃好喝好睡好</h2>
+                        <p>身体健康，生活美满！</p>
+                    </div>
+                </div>
+            </div>
+            <!-- 第八张卡片 -->
+            <div class="card" onclick="openCard(this)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h2>🎁 点击打开祝福卡片！</h2>
+                    </div>
+                    <div class="card-back">
+                        <h2>愿你今年好事多多</h2>
+                        <p>愿好运常伴，喜事连连！</p>
+                    </div>
+                </div>
+            </div>
+            <!-- 第九张卡片 -->
+            <div class="card" onclick="openCard(this)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h2>🎁 点击打开祝福卡片！</h2>
+                    </div>
+                    <div class="card-back">
+                        <h2>愿你今年平安喜乐！</h2>
+                        <p>愿你平安顺遂，快乐每一天！</p>
+                    </div>
+                </div>
+            </div>
+            <!-- 第十张卡片 -->
+            <div class="card" onclick="openCard(this)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h2>🎁 点击打开祝福卡片！</h2>
+                    </div>
+                    <div class="card-back">
+                        <h2>愿你未来光芒万丈</h2>
+                        <p>愿你的生活如星辰般耀眼！</p>
+                    </div>
+                </div>
+            </div>
+            <!-- 第十一张卡片 -->
+            <div class="card" onclick="openCard(this)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h2>🎁 点击打开祝福卡片！</h2>
+                    </div>
+                    <div class="card-back">
+                        <h2>愿你心想事成</h2>
+                        <p>愿你所有的梦想都能实现！</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="balloons">
+            <div class="balloon draggable" data-speed="1"></div>
+            <div class="balloon draggable" data-speed="1.5"></div>
+            <div class="balloon draggable" data-speed="2"></div>
+        </div>
+        <audio id="greetingMusic" loop autoplay>
+            <source src="03.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

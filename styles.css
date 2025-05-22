@@ -1,0 +1,510 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* General container styles */
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    overflow: hidden;
+}
+
+/* Main page styles */
+.main-page {
+    background: linear-gradient(45deg, #ffcccb, #87ceeb, #ffb6c1, #add8e6);
+    background-size: 400%;
+    animation: gradientShift 15s ease infinite;
+}
+
+/* Animated gradient keyframes */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Particle background with twinkling stars */
+.particle-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+    z-index: 1;
+}
+
+.particle-bg::before, .particle-bg::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    border-radius: 50%;
+    animation: twinkle 5s infinite ease-in-out;
+    opacity: 0.7;
+}
+
+.particle-bg::before {
+    top: 15%;
+    left: 25%;
+    animation-delay: 1s;
+}
+
+.particle-bg::after {
+    top: 65%;
+    right: 20%;
+    animation-delay: 3s;
+}
+
+/* Twinkling star keyframes */
+@keyframes twinkle {
+    0%, 100% { opacity: 0.3; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Fireworks effect */
+.fireworks {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.firework-particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    animation: explode 2s ease-out forwards;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+/* Firework explosion keyframes */
+@keyframes explode {
+    0% { transform: scale(0); opacity: 1; }
+    50% { transform: scale(1.5); opacity: 0.8; }
+    100% { transform: scale(0); opacity: 0; }
+}
+
+/* Marquee styles */
+.marquee {
+    position: absolute;
+    top: 5%;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 1.4em;
+    font-weight: bold;
+    z-index: 3;
+}
+
+.marquee span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 12s linear infinite, colorChange 6s infinite;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+    opacity: 0.7;
+}
+
+/* Color change for marquee */
+@keyframes colorChange {
+    0% { color: #ffd700; }
+    33% { color: #ff69b4; }
+    66% { color: #1e90ff; }
+    100% { color: #ffd700; }
+}
+
+/* Marquee animation */
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Content area styles */
+.content {
+    text-align: center;
+    z-index: 4;
+    padding: 20px;
+    width: 90%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: contentFadeIn 1.5s ease-out;
+    margin-top: 100px;
+}
+
+/* Content fade-in animation */
+@keyframes contentFadeIn {
+    0% { opacity: 0; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+h1 {
+    font-size: 2.8em;
+    margin: 0 0 20px 0;
+    color: #fff;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+    animation: bounce 1.5s infinite;
+    width: 100%;
+    text-align: center;
+}
+
+p {
+    font-size: 1.3em;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 14px;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    border: 2px solid #ff69b4;
+    border-radius: 10px;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #ff1493;
+    box-shadow: 0 0 8px rgba(255, 20, 147, 0.5);
+}
+
+.btn {
+    width: 100%;
+    padding: 14px;
+    background: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.3em;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s, box-shadow 0.3s;
+    margin-bottom: 12px;
+}
+
+.btn:hover {
+    background: #ff1493;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Barrage styles */
+.barrage {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 5;
+}
+
+.barrage-text {
+    position: absolute;
+    white-space: nowrap;
+    font-size: 1.5em;
+    text-shadow: 0 0 12px rgba(0, 0, 0, 0.7), 0 0 20px rgba(255, 255, 255, 0.9);
+    animation: barrage 4s linear forwards; /* 调整为 4秒 */
+}
+
+/* Barrage animation */
+@keyframes barrage {
+    0% { transform: translateX(100vw); opacity: 1; }
+    100% { transform: translateX(-100%); opacity: 1; }
+}
+
+/* Timer and date styles */
+.timer, .current-date {
+    margin-top: 15px;
+    font-size: 1.3em;
+    color: #fff;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+/* Modal styles (404 error) */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #f5f5f5;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 90%;
+    width: 450px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    font-family: 'Courier New', Courier, monospace;
+    animation: modalPop 0.5s ease-out;
+}
+
+@keyframes modalPop {
+    0% { transform: scale(0.7); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.modal-content h2 {
+    color: #d32f2f;
+    font-size: 2.8em;
+    margin: 0;
+    font-weight: bold;
+}
+
+.modal-content h3 {
+    color: #333;
+    font-size: 1.3em;
+    margin: 10px 0;
+    letter-spacing: 2px;
+}
+
+.modal-content p {
+    color: #666;
+    font-size: 1.1em;
+    margin: 20px 0;
+    text-shadow: none;
+}
+
+.close-btn {
+    background: #666;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.close-btn:hover {
+    background: #333;
+    transform: translateY(-2px);
+}
+
+/* Greeting page styles */
+.greeting-page {
+    background: linear-gradient(45deg, #87ceeb, #e6e6fa, #b0e0e6, #d8bfd8);
+    background-size: 400%;
+    animation: gradientShift 15s ease infinite;
+    overflow-y: auto;
+    justify-content: flex-start;
+    padding: 20px 0;
+}
+
+/* Parallax background */
+.dynamic-bg {
+    position: absolute;
+    width: 100%;
+    height: 200%;
+    top: 0;
+    left: 0;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.5)"/></svg>') repeat;
+    animation: parallaxScroll 20s linear infinite;
+    z-index: 1;
+}
+
+@keyframes parallaxScroll {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-150px); }
+}
+
+/* Card container */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    width: 90%;
+    max-width: 1200px;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+/* Card styles */
+.card {
+    width: 100%;
+    height: 320px;
+    perspective: 1200px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.card.open .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+.card-front {
+    background: linear-gradient(to bottom, #ff69b4, #ff1493);
+    color: white;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    background: linear-gradient(to bottom, #1e90ff, #87ceeb);
+    color: #333;
+}
+
+.card-back h2 {
+    font-size: 1.6em;
+    margin-bottom: 12px;
+}
+
+.card-back p {
+    font-size: 1.1em;
+    color: #333;
+    text-shadow: none;
+}
+
+/* Sparkle effect on card open */
+.card.open .card-back::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.5), transparent);
+    animation: sparkle 1s ease-out;
+}
+
+@keyframes sparkle {
+    0% { opacity: 1; transform: scale(0); }
+    100% { opacity: 0; transform: scale(2); }
+}
+
+/* Balloon styles */
+.balloons {
+    position: fixed;
+    bottom: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    z-index: 2;
+}
+
+.balloons .balloon {
+    width: 60px;
+    height: 80px;
+    background: #ff69b4;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    position: relative;
+    animation: float 1.8s infinite ease-in-out, rotate 3s infinite ease-in-out;
+    cursor: move;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 3;
+}
+
+.balloons .balloon:nth-child(2) {
+    background: #1e90ff;
+    animation-delay: 0.6s;
+}
+
+.balloons .balloon:nth-child(3) {
+    background: #ffd700;
+    animation-delay: 1.2s;
+}
+
+.balloons .balloon::after {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    left: calc(50% - 1.5px);
+    width: 3px;
+    height: 30px;
+    background: #111;
+    z-index: 2;
+}
+
+/* Balloon rotation */
+@keyframes rotate {
+    0%, 100% { transform: rotate(8deg); }
+    50% { transform: rotate(-8deg); }
+}
+
+/* Float animation */
+@keyframes float {
+    0%, 100% { transform: translateY(0) translateX(-20px); }
+    50% { transform: translateY(-150px) translateX(20px); }
+}
+
+/* Bounce animation */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-20px); }
+    60% { transform: translateY(-10px); }
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 600px) {
+    h1 { font-size: 2.2em; }
+    p { font-size: 1.1em; }
+    .marquee { font-size: 1.1em; }
+    .barrage-text { font-size: 1.2em; }
+    .timer, .current-date { font-size: 1.1em; }
+    .btn { font-size: 1.1em; padding: 12px; }
+    .card { height: 280px; }
+    .card-back h2 { font-size: 1.3em; }
+    .card-back p { font-size: 1em; }
+    input[type="text"] { font-size: 1.1em; padding: 12px; }
+    .modal-content { width: 85%; padding: 25px; }
+    .modal-content h2 { font-size: 2.2em; }
+    .modal-content h3 { font-size: 1.1em; }
+    .modal-content p { font-size: 1em; }
+}
